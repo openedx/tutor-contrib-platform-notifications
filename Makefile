@@ -6,19 +6,19 @@ SRC_DIRS = ./tutornotifications
 test: test-lint test-types test-format  # Run some static checks.
 
 test-format: ## Run code formatting tests
-	ruff format --check --diff ${SRC_DIRS}
+	hatch run quality:test-format
 
 test-lint: ## Run code linting tests
-	ruff check ${SRC_DIRS}
+	hatch run quality:test-lint
 
 test-types: ## Run type checks.
-	mypy --exclude=templates --ignore-missing-imports --implicit-reexport --strict ${SRC_DIRS}
+	hatch run quality:test-types
 
 format: ## Format code
-	ruff format ${SRC_DIRS}
+	hatch run quality:format
 
 fix-lint: ## Fix lint errors automatically
-	ruff check --fix ${SRC_DIRS}
+	hatch run quality:fix-lint
 
 version: ## Print the current tutor-cairn version
 	@python -c 'import io, os; about = {}; exec(io.open(os.path.join("tutornotifications", "__about__.py"), "rt", encoding="utf-8").read(), about); print(about["__version__"])'

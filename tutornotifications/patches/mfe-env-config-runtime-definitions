@@ -1,0 +1,2 @@
+
+    const { NotificationsTray } = await import('@edx/frontend-plugin-notifications');

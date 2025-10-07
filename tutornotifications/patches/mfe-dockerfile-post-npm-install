@@ -1,0 +1,3 @@
+RUN --mount=type=cache,target=/root/.npm,sharing=shared echo "installing notifications plugin" && npm install @edx/frontend-plugin-notifications@^2.0.3 && echo "done"
+
+RUN --mount=type=cache,target=/root/.npm,sharing=shared echo "TEMP installing custom header" && git clone --depth=1 --branch=farhaan/refactoring-slots https://github.com/open-craft/frontend-component-header.git && npm install --prefix ./frontend-component-header && npm run build --prefix ./frontend-component-header && npm install ./frontend-component-header && echo "done"

@@ -6,9 +6,12 @@ name = "tutor-contrib-notifications"
 description = "A Tutor plugin to manage configuration and plugin slots for the Notifications tray feature."
 authors = [
   { name = "Ty Hob"},
+  { name = "OpenCraft", email = "help@opencraft.com" },
 ]
 license = { text = "AGPL-3.0-only" }
-
+maintainers = [
+    { name = "OpenCraft", email = "help@opencraft.com" },
+]
 readme = {file = "README.rst", content-type = "text/x-rst"}
 requires-python = ">= 3.9"
 classifiers = [
@@ -27,6 +30,7 @@ classifiers = [
 ]
 dependencies = [
     "tutor>=20.0.0,<21.0.0",
+    "tutor-mfe>=20.0.0,<21.0.0",
 ]
 
 # These fields will be set by hatch_build.py
@@ -62,3 +66,23 @@ exclude = ["tests*"]
 
 [project.entry-points."tutor.plugin.v1"]
 notifications = "tutornotifications.plugin"
+
+[tool.hatch.envs.default.env-vars]
+SRC_DIRS = "./tutornotifications"
+
+[tool.hatch.envs.quality]
+dependencies = [
+    "ruff",
+]
+
+[tool.hatch.envs.quality.scripts]
+test = [
+    "test-lint",
+    "test-types",
+    "test-format",
+]
+test-lint = "ruff check {env:SRC_DIRS}"
+test-format = "ruff format --check --diff {env:SRC_DIRS}"
+test-types = "mypy --exclude=templates --ignore-missing-imports --implicit-reexport --strict {env:SRC_DIRS}"
+format = "ruff format {env:SRC_DIRS}"
+fix-lint = "ruff check --fix {env:SRC_DIRS}"
