@@ -1,5 +1,4 @@
 # https://packaging.python.org/en/latest/tutorials/packaging-projects/
-# https://hatch.pypa.io/latest/config/build/
 
 [project]
 name = "tutor-contrib-notifications"
@@ -33,8 +32,6 @@ dependencies = [
     "tutor-mfe @ git+https://github.com/overhangio/tutor-mfe.git@ulmo",
 ]
 
-# These fields will be set by hatch_build.py
-dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = [
@@ -42,27 +39,12 @@ dev = [
     "ruff",
 ]
 
-[tool.hatch.version]
-path = "tutornotifications/__about__.py"
-
 # https://packaging.python.org/en/latest/specifications/well-known-project-urls/#well-known-labels
 [project.urls]
 Documentation = "https://github.com/openedx/tutor-contrib-notifications#readme"
 Issues = "https://github.com/openedx/tutor-contrib-notifications/issues"
 Source = "https://github.com/openedx/tutor-contrib-notifications"
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.targets.wheel]
-packages = ["tutornotifications"]
-
-[tool.hatch.build.targets.sdist]
-# Disable strict naming, otherwise twine is not able to detect name/version
-strict-naming = false
-include = [ "/tutornotifications"]
-exclude = ["tests*"]
 
 [project.entry-points."tutor.plugin.v1"]
 notifications = "tutornotifications.plugin"
