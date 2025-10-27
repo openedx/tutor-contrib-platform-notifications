@@ -128,5 +128,11 @@ PLUGIN_SLOTS.add_items(
             "org.openedx.frontend.layout.header_learning_help.v1",
             notification_drawer_config,
         ),
+        (
+            "all",
+            "org.openedx.frontend.layout.studio_header_search_button_slot.v1",
+            notification_drawer_config,
+        ),
+
     ],
 )
