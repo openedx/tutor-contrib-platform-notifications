@@ -17,6 +17,8 @@ hooks.Filters.CONFIG_DEFAULTS.add_items(
         # Each new setting is a pair: (setting_name, default_value).
         # Prefix your setting names with 'NOTIFICATIONS_'.
         ("NOTIFICATIONS_VERSION", __version__),
+        ("NOTIFICATIONS_ENABLE_SHOW_EMAIL_CHANNEL", True),
+        ("NOTIFICATIONS_ENABLE_SHOW_PUSH_CHANNEL", False),
     ]
 )
 
@@ -133,6 +135,5 @@ PLUGIN_SLOTS.add_items(
             "org.openedx.frontend.layout.studio_header_search_button_slot.v1",
             notification_drawer_config,
         ),
-
     ],
 )
