@@ -19,6 +19,10 @@ Usage
     tutor plugins enable notifications
 
 
+The email and push notification settings under Account can be enabled/disabled using `NOTIFICATIONS_ENABLE_SHOW_EMAIL_CHANNEL`
+and `NOTIFICATIONS_ENABLE_SHOW_PUSH_CHANNEL`. `NOTIFICATIONS_ENABLE_SHOW_EMAIL_CHANNEL` is set to True while `NOTIFICATIONS_ENABLE_SHOW_PUSH_CHANNEL`
+is set to False by default.
+
 License
 *******
 
