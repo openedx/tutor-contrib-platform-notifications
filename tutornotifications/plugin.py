@@ -19,6 +19,7 @@ hooks.Filters.CONFIG_DEFAULTS.add_items(
         ("NOTIFICATIONS_VERSION", __version__),
         ("NOTIFICATIONS_ENABLE_SHOW_EMAIL_CHANNEL", True),
         ("NOTIFICATIONS_ENABLE_SHOW_PUSH_CHANNEL", False),
+        ("NOTIFICATIONS_DEFAULT_FROM_EMAIL", "{{ CONTACT_EMAIL }}")
     ]
 )
 
