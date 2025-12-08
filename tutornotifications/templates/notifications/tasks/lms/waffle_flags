@@ -1,2 +1,2 @@
 # Create waffle flag to enable notifications
-(./manage.py lms waffle_flag --list | grep notifications.enable_notifications) || ./manage.py lms waffle_flag --everyone --create notifications.enable_notifications
+(./manage.py lms waffle_flag --list | grep notifications.enable_notifications) || ./manage.py lms waffle_flag --everyone --create notifications.enable_notifications; (./manage.py lms waffle_flag --list | grep notifications.enable_email_notifications) || ./manage.py lms waffle_flag --everyone --create notifications.enable_email_notifications
