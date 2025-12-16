@@ -1,2 +1,2 @@
-recursive-include tutornotifications/patches *
-recursive-include tutornotifications/templates *
+recursive-include tutorplatformnotifications/patches *
+recursive-include tutorplatformnotifications/templates *

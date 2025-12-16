@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: 3.12
-      - name: Install tutor-contrib-notifications
+      - name: Install tutor-contrib-platform-notifications
         run: pip install -e .
       - name: Tutor config save
         run: tutor config save
