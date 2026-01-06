@@ -1,7 +1,7 @@
 # https://packaging.python.org/en/latest/tutorials/packaging-projects/
 
 [project]
-name = "tutor-contrib-notifications"
+name = "tutor-contrib-platform-notifications"
 description = "A Tutor plugin to manage configuration and plugin slots for the Notifications tray feature."
 authors = [
   { name = "Ty Hob"},
@@ -41,13 +41,13 @@ dev = [
 
 # https://packaging.python.org/en/latest/specifications/well-known-project-urls/#well-known-labels
 [project.urls]
-Documentation = "https://github.com/openedx/tutor-contrib-notifications#readme"
-Issues = "https://github.com/openedx/tutor-contrib-notifications/issues"
-Source = "https://github.com/openedx/tutor-contrib-notifications"
+Documentation = "https://github.com/openedx/tutor-contrib-platform-notifications#readme"
+Issues = "https://github.com/openedx/tutor-contrib-platform-notifications/issues"
+Source = "https://github.com/openedx/tutor-contrib-platform-notifications"
 
 
 [project.entry-points."tutor.plugin.v1"]
-notifications = "tutornotifications.plugin"
+notifications = "tutorplatformnotifications.plugin"
 
 [tool.setuptools.dynamic]
-version = {attr = "tutornotifications.__about__.__version__"}
+version = {attr = "tutorplatformnotifications.__about__.__version__"}

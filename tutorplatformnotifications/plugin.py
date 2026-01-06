@@ -19,7 +19,7 @@ hooks.Filters.CONFIG_DEFAULTS.add_items(
         ("NOTIFICATIONS_VERSION", __version__),
         ("NOTIFICATIONS_ENABLE_SHOW_EMAIL_CHANNEL", True),
         ("NOTIFICATIONS_ENABLE_SHOW_PUSH_CHANNEL", False),
-        ("NOTIFICATIONS_DEFAULT_FROM_EMAIL", "{{ CONTACT_EMAIL }}")
+        ("NOTIFICATIONS_DEFAULT_FROM_EMAIL", "{{ CONTACT_EMAIL }}"),
     ]
 )
 
@@ -54,7 +54,7 @@ MY_INIT_TASKS: list[tuple[str, tuple[str, ...]]] = [
 
 for service, template_path in MY_INIT_TASKS:
     full_path: str = str(
-        importlib_resources.files("tutornotifications")
+        importlib_resources.files("tutorplatformnotifications")
         / os.path.join("templates", *template_path)
     )
     with open(full_path, encoding="utf-8") as init_task_file:
@@ -71,7 +71,7 @@ for service, template_path in MY_INIT_TASKS:
 hooks.Filters.ENV_TEMPLATE_ROOTS.add_items(
     # Root paths for template files, relative to the project root.
     [
-        str(importlib_resources.files("tutornotifications") / "templates"),
+        str(importlib_resources.files("tutorplatformnotifications") / "templates"),
     ]
 )
 
@@ -79,7 +79,7 @@ hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
     # For each pair (source_path, destination_path):
     # templates at ``source_path`` (relative to your ENV_TEMPLATE_ROOTS) will be
     # rendered to ``source_path/destination_path`` (relative to your Tutor environment).
-    # For example, ``tutornotifications/templates/notifications/build``
+    # For example, ``tutorplatformnotifications/templates/notifications/build``
     # will be rendered to ``$(tutor config printroot)/env/plugins/notifications/build``.
     [
         ("notifications/build", "plugins"),
@@ -94,10 +94,10 @@ hooks.Filters.ENV_TEMPLATE_TARGETS.add_items(
 #  this section as-is :)
 ########################################
 
-# For each file in tutornotifications/patches,
+# For each file in tutorplatformnotifications/patches,
 # apply a patch based on the file's name and contents.
 for path in glob(
-    str(importlib_resources.files("tutornotifications") / "patches" / "*")
+    str(importlib_resources.files("tutorplatformnotifications") / "patches" / "*")
 ):
     with open(path, encoding="utf-8") as patch_file:
         hooks.Filters.ENV_PATCHES.add_item((os.path.basename(path), patch_file.read()))

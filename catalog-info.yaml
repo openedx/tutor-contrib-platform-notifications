@@ -4,10 +4,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: "tutor-contrib-notifications"
+  name: "tutor-contrib-platform-notifications"
   description: "A Tutor plugin to manage configuration and plugin slots for the Notifications tray feature."
   links:
-    - url: "https://github.com/openedx/tutor-contrib-notifications/blob/master/README.rst"
+    - url: "https://github.com/openedx/tutor-contrib-platform-notifications/blob/master/README.rst"
       title: "README"
       icon: "Article"
   annotations:
@@ -18,6 +18,6 @@ metadata:
     openedx.org/arch-interest-groups: ""
 spec:
   # (Required) This can be a group(`group:<group_name>` or a user(`user:<github_username>`)
-  owner: group:committers-tutor-contrib-notifications
+  owner: group:committers-tutor-contrib-platform-notifications
   type: "library"
   lifecycle: "experimental"
