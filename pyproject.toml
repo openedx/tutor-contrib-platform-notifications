@@ -35,7 +35,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "tutor[dev] @ git+https://github.com/overhangio/tutor.git@main",
+    "tutor[dev]>=21.0.0,<22.0.0",
     "ruff",
 ]
 
