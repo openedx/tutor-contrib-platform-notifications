@@ -29,13 +29,13 @@ classifiers = [
 
 ]
 dependencies = [
-    "tutor >= 20,<21.0.0",
-    "tutor-mfe >= 20,<21.0.0",
+    "tutor >= 21,<22.0.0",
+    "tutor-mfe >= 21,<22.0.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "tutor[dev] @ git+https://github.com/overhangio/tutor.git@ulmo",
+    "tutor[dev] @ git+https://github.com/overhangio/tutor.git@main",
     "ruff",
 ]
 
